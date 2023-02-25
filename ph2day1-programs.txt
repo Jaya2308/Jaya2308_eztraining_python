@@ -1,0 +1,83 @@
+L=[1,2,3]
+r=map(lambda x:x+x,L)
+print(list(r))
+
+#example using map here map helps to create iteration
+res=map(lambda n:pow(n,2),L)
+print(list(res))
+
+name="sam"
+(lambda name:print(name))(name)
+
+#write a program after creating a list with even numbers within the range 1
+#to 15 now apply lambda function and create a new list which should have square
+#roots of the elements
+import math
+li=[]
+for i in range(1,16):
+    if i%2==0:
+        li.append(i)
+print(li)
+res=map(lambda n:math.sqrt(n),li)
+print(list(res))
+
+#program to show workinfunctiong of abstraction
+from abc import ABC,abstractmethod
+class abstractdemo(ABC):
+    @abstractmethod
+    #decorator will make the moethod(function) abstract one
+    def display(self):
+        None
+    @abstractmethod
+    def show(self):
+        None
+#changing abstract to concrete
+class demo(abstractdemo):
+    def display(self):
+        print("Abstraction method")
+    def show(self):
+        print("2nd function")
+obj=demo()
+obj.display()
+obj.show()
+
+#program for inheritance
+class parent:
+    def display(self):
+        print("Parent class")
+class child(parent):
+    def show(self):
+        print("child class")
+c=child()
+c.display()
+c.show()
+
+
+
+#example for inheritance
+
+class A:
+    n=30
+class B(A):
+    def calc(self):
+        c=self.n+70
+        print(c)
+obj=B()
+obj.clac()
+
+    
+
+#multiple inheritance
+class mom:
+    def mdisplay(self):
+        print("mom class")
+class dad:
+    def ddisplay(self):
+        print("dad class")
+class child(mom,dad):
+    def cdisplay(self):
+        print("child class")
+c1=child()
+c1.cdisplay()
+c1.ddisplay()
+c1.mdisplay()
